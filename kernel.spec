@@ -1146,8 +1146,8 @@ or ss4000e or sanmina boards.
 %mkflavour versatile
 %endif
 %if %build_wandboard
-%define summary_versatile Linux Kernel for Wandboard arm machines
-%define info_versatile This kernel is compiled for Wandboard boards. It will run on Wandboard boards.
+%define summary_wandboard Linux Kernel for Wandboard arm machines
+%define info_wandboard This kernel is compiled for Wandboard boards. It will run on Wandboard boards.
 %mkflavour wandboard
 %endif
 %endif
