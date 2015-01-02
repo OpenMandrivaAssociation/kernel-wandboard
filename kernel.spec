@@ -667,6 +667,8 @@ BuildRequires:		zlib-devel
 %ifarch %{arm}
 %if !%{build_wandboard}
 BuildRequires:		uboot-mkimage
+%else
+BuildRequires:		lzop
 %endif
 %endif
 
