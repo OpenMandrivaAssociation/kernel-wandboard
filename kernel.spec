@@ -2679,7 +2679,3 @@ rm -rf %{buildroot}
 %{_libdir}/libcpupower.so
 %{_includedir}/cpufreq.h
 %endif
-
-
-
-%changelog
