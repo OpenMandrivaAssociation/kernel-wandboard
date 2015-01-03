@@ -2052,7 +2052,9 @@ EOF
 ### Create kernel Post script
 cat > $kernel_files-post <<EOF
 %ifarch %{arm}
+%if !%{build_wandboard}
 /sbin/installkernel -i -N %{kversion}-$kernel_flavour-%{buildrpmrel}
+%endif
 %else
 /sbin/installkernel %{kversion}-$kernel_flavour-%{buildrpmrel}
 pushd /boot > /dev/null
@@ -2085,7 +2087,9 @@ EOF
 
 ### Create kernel Preun script on the fly
 cat > $kernel_files-preun <<EOF
+%if !%{build_wandboard}
 /sbin/installkernel -R %{kversion}-$kernel_flavour-%{buildrpmrel}
+%endif
 pushd /boot > /dev/null
 if [ -L vmlinuz-$kernel_flavour ]; then
 	if [ "$(readlink vmlinuz-$kernel_flavour)" = "vmlinuz-%{kversion}-$kernel_flavour-%{buildrpmrel}" ]; then
