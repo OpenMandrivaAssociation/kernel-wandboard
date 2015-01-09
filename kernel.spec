@@ -5,7 +5,7 @@
 %define sublevel	17
 
 # Package release
-%define mibrel		1
+%define mibrel		2
 
 # kernel Makefile extraversion is substituted by
 # kpatch wich are either 0 (empty), rc (kpatch)

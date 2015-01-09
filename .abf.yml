@@ -1,4 +1,4 @@
 sources:
-  "linux-3.10.17-mdk1.tar.xz": 1af60a142a2c8b9a9ccc4e199c361889120be1b3
   "linux-3.10.17-wandboard.tar.xz": a2052d6b78507cc1ef1578833f5c8b2a32847621
-  "patch-3.10.17.xz": da39a3ee5e6b4b0d3255bfef95601890afd80709
+  patch-3.10.17.xz: ae1347efa806fb639679f921b3a821f28e59b34c
+  linux-3.10.17-mdk2.tar.xz: ee50e12f4e1415004d563dda1643c12b365d1af2
