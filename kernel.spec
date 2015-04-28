@@ -2,10 +2,10 @@
 %define kernelversion	3
 %define patchlevel	10
 # sublevel is now used for -stable patches
-%define sublevel	17
+%define sublevel	53
 
 # Package release
-%define mibrel		2
+%define mibrel		1
 
 # kernel Makefile extraversion is substituted by
 # kpatch wich are either 0 (empty), rc (kpatch)
@@ -27,7 +27,7 @@
 %define rpmrel		%mkrel 0.%{kpatch}.%{mibrel}
 %endif
 %else
-%define rpmrel		2
+%define rpmrel		1
 %endif
 
 # fakerel and fakever never change, they are used to fool
@@ -340,6 +340,7 @@
 ############################################################
 %if %{mdvver} == 201500
 %if %cross_compiling
+%define	__cc %{_target_platform}-gcc
 %if %(if [ -z "$CC" ] ; then echo 0; else echo 1; fi)
 %define kmake %make ARCH=%target_arch CROSS_COMPILE=%(echo %__cc |sed -e 's,-gcc,-,') CC="$CC" LD="$LD" LDFLAGS="$LDFLAGS"
 %else
