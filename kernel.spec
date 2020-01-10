@@ -2167,12 +2167,12 @@ sed -i -e 's,CONFIG_EFIVAR_FS=m,CONFIG_EFIVAR_FS=y,g' %{patches_dir}/configs/*.c
 # https://wiki.archlinux.org/index.php/Unified_Extensible_Firmware_Interface
 sed -i -e 's,CONFIG_EFI_VARS=y,CONFIG_EFI_VARS=n,g' %{patches_dir}/configs/*.config
 %if !%{build_wandboard}
-# %{patches_dir}/scripts/apply_patches-vanilla
+# %{patches_dir}/scripts/autopatch -p1-vanilla
 # %{patches_dir}/scripts/create_configs-vanilla %debug --user_cpu="%{target_arch}"
 
-%{patches_dir}/scripts/apply_patches
-%{patches_dir}/scripts/apply_patches-geek
-%{patches_dir}/scripts/apply_patches-latest
+%{patches_dir}/scripts/autopatch -p1
+%{patches_dir}/scripts/autopatch -p1-geek
+%{patches_dir}/scripts/autopatch -p1-latest
 %{patches_dir}/scripts/create_configs-old-mdv %debug --user_cpu="%{target_arch}"
 %endif
 
@@ -2207,7 +2207,7 @@ CreateKernel netbook-pae
 %endif
 
 %if !%{build_wandboard}
-%{patches_dir}/scripts/apply_patches-NRJ
+%{patches_dir}/scripts/autopatch -p1-NRJ
 %{patches_dir}/scripts/create_configs-withBFQ %debug --user_cpu="%{target_arch}"
 %endif
 
@@ -2301,7 +2301,7 @@ CreateKernel wandboard
 %endif
 
 %if !%{build_wandboard}
-%{patches_dir}/scripts/apply_patches-QL
+%{patches_dir}/scripts/autopatch -p1-QL
 %{patches_dir}/scripts/create_configs-QL %debug --user_cpu="%{target_arch}"
 %endif
 
